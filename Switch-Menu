@@ -1,0 +1,69 @@
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+float Area_Cuadrado();
+float Area_Circulo();
+float Area_triangulo();
+
+void main()
+{
+	int lado, opcion;
+	float area;
+	do {
+		cout << endl;
+		cout << "---------MENU--------" << endl;
+		cout << "1.sacar area cuadrado" << endl;
+		cout << "2.sacar area circulo" << endl;
+		cout << "3.sacar area triangulo" << endl;
+		cout << "4.salir" << endl;
+		cin >> opcion;
+		switch (opcion) {
+		case 1: area = Area_Cuadrado();
+			cout << area;
+			cout << "cm^2";
+			break;
+		case 2: area = Area_Circulo();
+			cout << area;
+			cout << "cm^2";
+
+			break;
+		case 3: area = Area_triangulo();
+			cout << area;
+			cout << "cm^2";
+			break;
+		case 4: cout << "salir";
+			break;
+		default: cout << "error" << endl;
+			break;
+		}
+	} while (opcion != 4);
+	_getch();
+}
+float Area_Cuadrado()
+{
+	float area, lado, altura;
+	cout << "pedir lado en cm: ";
+	cin >> lado;
+	area = lado * lado;
+	return area;
+}
+float Area_Circulo()
+{
+	float area,lado, altura;
+	cout << "pedir lado en cm: ";
+	cin >> lado;
+	area = (lado / 2) * (lado / 2) * 3.14156;
+	return area;
+}
+float Area_triangulo()
+{
+	float area,lado,altura;
+	cout << "pedir lado en cm: ";
+	cin >> lado;
+	cout << "pedir altura en cm : ";
+	cin >> altura;
+	area = ( lado * altura) / 2;
+	return area;
+}
